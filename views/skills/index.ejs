@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=Ex, initial-scale=1.0">
+    <title>Express To-Do</title>
+</head>
+
+<body>
+    <h1>Skills as of <%= time %>
+    </h1>
+    <ul>
+        <% skills.forEach(function(s) { %>
+            <li>
+                <form action="/skills/<%= s.id %>?_method=DELETE" class="delete-form" method="POST">
+                    <button type="submit">X</button>
+                </form>
+                <a href="/skills/<%= s.id %>">
+                    <%= s.skill %>
+                </a>
+                <% }); %>
+    </ul>
+</body>
+
+</html>
